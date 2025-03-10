@@ -1,0 +1,38 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"  
+    controllerName="com.example.salesorder.controller.Home">  <!-- Namespace düzeltildi -->
+    <App>
+        <pages>
+            <Page title="Ana Sayfa">
+                <headerContent>
+                    <Button
+                        icon="sap-icon://menu"
+                        press=".onMenuPress"
+                        tooltip="Menü" />
+                    <Title text="Sales Order Admin" />
+                </headerContent>
+
+                <!-- SideNavigation için container ekle -->
+                <tnt:SideNavigation id="sideMenu">
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem 
+                            text="Profil" 
+                            icon="sap-icon://user"
+                            select=".onNavToProfile" />
+                        <tnt:NavigationListItem 
+                            text="Çıkış Yap" 
+                            icon="sap-icon://log"
+                            select=".onLogout" />
+                    </tnt:NavigationList>
+                </tnt:SideNavigation>
+
+                <Panel headerText="Hoş Geldiniz" class="sapUiResponsiveMargin">
+                    <Text text="Kullanıcı: {user>/name}" />
+                    <Text text="Rol: {user>/role}" />
+                </Panel>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

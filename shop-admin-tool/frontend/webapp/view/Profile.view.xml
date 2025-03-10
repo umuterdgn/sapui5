@@ -1,0 +1,17 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="salesorder.controller.Profile">
+    <Page title="Profil">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Input value="{user>/email}" placeholder="E-posta" />
+                <Input value="{user>/phone}" placeholder="Telefon" />
+                <Button 
+                    text="Güncelle"
+                    type="Emphasized"
+                    press=".onUpdateProfile" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

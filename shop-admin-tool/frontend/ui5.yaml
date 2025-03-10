@@ -1,0 +1,15 @@
+specVersion: "3.0"
+metadata:
+  name: "com.example.salesorder"
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: webapp  # webapp klasörünü kaynak olarak tanımla
+builder:
+  resources:
+    excludes:
+      - "/test/**"    # Test dosyalarını hariç tut
+  customTasks:
+    - name: generateComponentPreload
+      afterTask: replaceVersion

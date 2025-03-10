@@ -1,0 +1,32 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="com.example.salesorder.controller.Login"
+  displayBlock="true">
+
+  <App>
+    <Page showHeader="false">
+      <content>
+        <!-- Ekranı ortalamak için bir VBox ekledik -->
+        <VBox justifyContent="Center" alignItems="Center" class="fullHeight">
+          <VBox class="loginBox" alignItems="Center" justifyContent="Center">
+            <Title text="Welcome" level="H1" class="inputMargin" />
+            
+            <Input id="emailInput" placeholder="Email Address" class="inputMargin" width="100%" />
+            <Input id="passwordInput" placeholder="Password" type="Password" class="inputMargin" width="100%" />
+
+            <Link text="Forgot Password" class="linkMargin" press="onForgotPassword" />
+
+            <Button text="Login" type="Emphasized" width="100%" class="inputMargin" press="onLoginPress" />
+
+            <HBox class="inputMargin" justifyContent="Center">
+              <Text text="Don't have an account?" />
+              <Link text=" Signup" press="onSignup" />
+            </HBox>
+          </VBox>
+        </VBox>
+      </content>
+    </Page>
+  </App>
+
+</mvc:View>

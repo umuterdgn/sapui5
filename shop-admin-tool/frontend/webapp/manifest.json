@@ -1,0 +1,79 @@
+{
+  "sap.app": {
+    "id": "com.shopadmintool", 
+    "type": "application",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "Shop Admin Tool",  
+    "description": "Shop Administration Tool"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.shopadmintool.view.Login",  
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.tnt": {}  
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.shopadmintool.i18n.i18n" 
+        }
+      },
+      "user": {  
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.shopadmintool.view",  
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide"
+      },
+      "routes": [
+        {
+          "pattern": "login",
+          "name": "login",
+          "target": "login"
+        },
+        {  
+          "pattern": "home",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "pattern": "profile",
+          "name": "profile",
+          "target": "profile"
+        }
+      ],
+      "targets": {
+        "login": {
+          "viewName": "Login",
+          "viewLevel": 1
+        },
+        "home": {  
+          "viewName": "Home",
+          "viewLevel": 2
+        },
+        "profile": {  
+          "viewName": "Profile",
+          "viewLevel": 3
+        }
+      }
+    }
+  }
+}
