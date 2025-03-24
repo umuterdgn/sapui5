@@ -1,6 +1,6 @@
 specVersion: "3.0"
 metadata:
-  name: "com.example.salesorder"
+  name: "com.shopadmintool"
 type: application
 resources:
   configuration:

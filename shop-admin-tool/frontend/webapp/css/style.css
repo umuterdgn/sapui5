@@ -49,3 +49,141 @@
   color: #2196f3;
   cursor: pointer;
 }
+
+/* Add to your existing style.css */
+/* Side navigation styles */
+.sideNavPanel {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #0a6ed1;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.sideNavPanel.collapsed {
+  width: 0;
+  padding-top: 0;
+}
+
+.mainContent {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+}
+
+.mainContent.expanded {
+  margin-left: 0;
+}
+
+.sideNavItem {
+  padding: 8px 8px 8px 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.sideNavItem:hover {
+  background-color: #0854a0;
+}
+
+.sideNavIcon {
+  margin-right: 10px;
+}
+
+/* Navigation list customization */
+.customNavList .sapMListHdr {
+  color: white;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+}
+
+.customNavList .sapTntNavLIItem {
+  height: 3rem;
+}
+
+.customNavList .sapTntNavLIText {
+  color: white;
+}
+
+.customNavList .sapTntNavLIItem:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* App specific styles */
+.dashboardTile {
+  height: 150px;
+  text-align: center;
+  padding: 1rem;
+  background: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.tileNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0a6ed1;
+  margin: 1rem 0;
+}
+
+.menuButton {
+  margin-right: 1rem;
+}
+.page-content {
+  padding: 1rem;
+}
+
+.userList {
+  margin-top: 1rem;
+}
+
+.userListItem {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.5rem 0;
+}
+/* Side navigation styling with animations */
+.sapTntSideNavigation {
+  transition: width 0.3s ease-in-out;
+}
+
+/* When collapsed, ensure proper width */
+.sapTntSideNavigation:not(.sapTntSideNavigationExpanded) {
+  width: 3rem !important;
+}
+
+/* Style the navigation items */
+.sapTntNavLI {
+  border-left: 3px solid transparent;
+}
+
+.sapTntNavLI:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+  border-left: 3px solid #2196f3;
+}
+
+.sapTntNavLIItem.sapTntNavLIItemSelected {
+  background-color: rgba(33, 150, 243, 0.2);
+  border-left: 3px solid #2196f3;
+}
+
+/* Ensure proper content margin */
+.sapMPanel {
+  margin-left: 1rem;
+}
+
+/* Table styling */
+.sapMListTblCell {
+  vertical-align: middle;
+}
+
+/* Action buttons in table */
+.sapMListTblCell .sapMBtn {
+  margin-right: 0.5rem;
+}

@@ -1,37 +1,113 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt"  
-    controllerName="com.example.salesorder.controller.Home">  <!-- Namespace düzeltildi -->
-    <App>
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    controllerName="com.shopadmintool.controller.Home"
+    displayBlock="true">
+    
+    <App id="app">
         <pages>
-            <Page title="Ana Sayfa">
+            <Page id="homePage" showHeader="true" title="Shop Admin Tool">
                 <headerContent>
                     <Button
-                        icon="sap-icon://menu"
-                        press=".onMenuPress"
-                        tooltip="Menü" />
-                    <Title text="Sales Order Admin" />
+                        id="menuButton"
+                        icon="sap-icon://menu2"
+                        press=".onToggleMenu"
+                        tooltip="Toggle Menu"
+                        class="menuButton" />
                 </headerContent>
-
-                <!-- SideNavigation için container ekle -->
-                <tnt:SideNavigation id="sideMenu">
-                    <tnt:NavigationList>
-                        <tnt:NavigationListItem 
-                            text="Profil" 
-                            icon="sap-icon://user"
-                            select=".onNavToProfile" />
-                        <tnt:NavigationListItem 
-                            text="Çıkış Yap" 
-                            icon="sap-icon://log"
-                            select=".onLogout" />
-                    </tnt:NavigationList>
-                </tnt:SideNavigation>
-
-                <Panel headerText="Hoş Geldiniz" class="sapUiResponsiveMargin">
-                    <Text text="Kullanıcı: {user>/name}" />
-                    <Text text="Rol: {user>/role}" />
-                </Panel>
+                
+                <!-- Side Navigation Panel -->
+                <tnt:ToolPage id="toolPage">
+                    <tnt:header>
+                        <tnt:ToolHeader visible="false">
+                            <!-- Hidden header - we're using the Page header instead -->
+                        </tnt:ToolHeader>
+                    </tnt:header>
+                    
+                    <tnt:sideContent>
+                        <tnt:SideNavigation id="sideNavigation" expanded="true">
+                            <tnt:NavigationList id="navigationList" class="customNavList">
+                                <tnt:NavigationListItem
+                                    text="Dashboard"
+                                    icon="sap-icon://home"
+                                    select=".onNavToDashboard" />
+                                <tnt:NavigationListItem
+                                    text="Kullanıcılar"
+                                    icon="sap-icon://group"
+                                    select=".onNavToUsers" />
+                                <tnt:NavigationListItem
+                                    text="Profil"
+                                    icon="sap-icon://user-settings"
+                                    select=".onNavToProfile" />
+                                <tnt:NavigationListItem
+                                    text="Çıkış Yap"
+                                    icon="sap-icon://log"
+                                    select=".onLogout" />
+                            </tnt:NavigationList>
+                        </tnt:SideNavigation>
+                    </tnt:sideContent>
+                    
+                    <tnt:mainContents>
+                        <NavContainer id="pageContainer">
+                            <!-- Dashboard content -->
+                            <Page id="dashboardPage" showHeader="false" class="sapUiContentPadding">
+                                <Panel headerText="Hoş Geldiniz" class="sapUiResponsiveMargin">
+                                    <Text text="Kullanıcı: {user>/name}" />
+                                    <Text text="Rol: {user>/role}" />
+                                </Panel>
+                                
+                                <FlexBox
+                                    alignItems="Stretch"
+                                    justifyContent="SpaceBetween"
+                                    wrap="Wrap"
+                                    class="sapUiResponsiveMargin">
+                                    
+                                    <!-- Stat Tiles -->
+                                    <FlexBox direction="Column" class="dashboardTile" width="23%">
+                                        <Title text="Test Sertifikası" level="H3"/>
+                                        <Text text="0" class="tileNumber"/>
+                                    </FlexBox>
+                                    
+                                    <FlexBox direction="Column" class="dashboardTile" width="23%">
+                                        <Title text="Yaklaşan Ödeme" level="H3"/>
+                                        <Text text="0" class="tileNumber"/>
+                                    </FlexBox>
+                                    
+                                    <FlexBox direction="Column" class="dashboardTile" width="23%">
+                                        <Title text="Beklenen Sipariş" level="H3"/>
+                                        <Text text="0" class="tileNumber"/>
+                                    </FlexBox>
+                                    
+                                    <FlexBox direction="Column" class="dashboardTile" width="23%">
+                                        <Title text="Yüklemedeki Araç" level="H3"/>
+                                        <Text text="2" class="tileNumber"/>
+                                    </FlexBox>
+                                </FlexBox>
+                                
+                                <!-- Charts for Shipment and Order Distribution -->
+                                <Panel headerText="Sevkiyat Tonaj Dağılım" class="sapUiResponsiveMargin">
+                                    <Text text="Henüz veri yok" />
+                                </Panel>
+                                
+                                <Panel headerText="Sipariş Türü Dağılımı (2025)" class="sapUiResponsiveMargin">
+                                    <HBox>
+                                        <VBox class="sapUiSmallMarginEnd">
+                                            <Text text="Peşin Sipariş" />
+                                        </VBox>
+                                        <VBox class="sapUiSmallMarginEnd">
+                                            <Text text="STM Sipariş" />
+                                        </VBox>
+                                        <VBox>
+                                            <Text text="DBS Sipariş" />
+                                        </VBox>
+                                    </HBox>
+                                </Panel>
+                            </Page>
+                        </NavContainer>
+                    </tnt:mainContents>
+                </tnt:ToolPage>
             </Page>
         </pages>
     </App>

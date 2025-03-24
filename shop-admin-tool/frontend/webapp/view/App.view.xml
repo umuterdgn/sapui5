@@ -1,0 +1,12 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    
+    <App id="app">
+        <pages>
+            <!-- Router ile yönlendirilen sayfalar buraya gelecek -->
+        </pages>
+    </App>
+
+</mvc:View>

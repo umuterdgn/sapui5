@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(Controller, MessageToast, JSONModel) {
   "use strict";
 
-  return Controller.extend("com.example.salesorder.view.Login", {
+  return Controller.extend("com.shopadmintool.view.Login", {
     
     // Mock Kullanıcı Listesi (Mevcut koda ek)
     _mockUsers: {
